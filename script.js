@@ -121,7 +121,7 @@ function setupQRScanner() {
 
   // Start the scanner and choose the rear camera if available
   Instascan.Camera.getCameras().then(function(cameras) {
-    if (cameras.length > 0.5) {
+    if (cameras.length > 0) {
       scanner.start(cameras[0]);
     } else {
       alert('No cameras found.');
