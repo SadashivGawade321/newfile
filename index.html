@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Attendance Management System</h1>
+    
+    <div class="form-section">
+      <h2>Add Student Attendance</h2>
+      <input type="text" id="studentName" placeholder="Enter student name" required>
+      <button onclick="markAttendance()">Mark Present</button>
+    </div>
+
+    <div class="qr-section">
+      <h2>Scan QR Code to Mark Attendance</h2>
+      <video id="preview" class="qr-video"></video>
+    </div>
+
+    <div class="attendance-list">
+      <h2>Attendance Record</h2>
+      <table id="attendanceTable">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="attendanceBody">
+          <!-- Attendance records will be added here dynamically -->
+        </tbody>
+      </table>
+      <button onclick="clearAttendance()">Clear Attendance</button>
+      <button onclick="exportToExcel()">Export to Excel</button>
+    </div>
+  </div>
+  <div class="camera-container">
+    <video id="preview"></video>
+</div>
+
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
